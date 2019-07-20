@@ -21,6 +21,7 @@ query Home ($page: Int) {
       node {
         id
         title
+        featuredMediaImage
         path
         excerpt
       }

@@ -5,19 +5,19 @@
         <div class="columns is-centered">
           <div class="column">
             <div class="box post-content">
-              
+              <g-image v-if="$page.wordPressPost.featuredMediaImage" :src="$page.wordPressPost.featuredMediaImage" />
               <h1 class="title has-text-weight-bold is-size-2 is-size-3-mobile has-text-centered" v-html="$page.wordPressPost.title"/>
-                <div class="has-text-centered">
-                  <template v-if="$page.wordPressPost.categories.length">
-                    <ul class="categories">
-                      <li v-for="category in $page.wordPressPost.categories" :key="category.id" >
-                        <g-link :to="category.path">
-                          <span class="tag is-info">{{ category.title }}</span>
-                          </g-link>
-                      </li>
-                    </ul>
-                  </template>
-                </div>
+              <div class="has-text-centered">
+                <template v-if="$page.wordPressPost.categories.length">
+                  <ul class="categories">
+                    <li v-for="category in $page.wordPressPost.categories" :key="category.id" >
+                      <g-link :to="category.path">
+                        <span class="tag is-info">{{ category.title }}</span>
+                      </g-link>
+                    </li>
+                  </ul>
+                </template>
+              </div>
 
                 <template v-if="$page.wordPressPost.postFragments" v-for="fragment in $page.wordPressPost.postFragments">
                     <!-- Fragment is a html block -->
